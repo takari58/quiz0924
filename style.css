@@ -8,9 +8,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
 body {
 
@@ -24,7 +21,8 @@ body {
 
     color: #333;
 
-    padding-bottom: 75px;
+    padding-bottom: 70px;
+
 }
 
 
@@ -34,13 +32,13 @@ body {
 
 header {
 
-    height: 65px;
+    height: 64px;
 
     background:
         linear-gradient(
             135deg,
             #ff9800,
-            #ff6f00
+            #f57c00
         );
 
     color: white;
@@ -51,8 +49,7 @@ header {
 
     justify-content: space-between;
 
-    padding:
-        0 16px;
+    padding: 0 16px;
 
     box-shadow:
         0 2px 8px
@@ -61,6 +58,7 @@ header {
     position: relative;
 
     z-index: 1000;
+
 }
 
 
@@ -71,6 +69,7 @@ header {
     align-items: center;
 
     gap: 8px;
+
 }
 
 
@@ -81,9 +80,9 @@ header {
 }
 
 
-.header-title h1 {
+header h1 {
 
-    font-size: 21px;
+    font-size: 20px;
 
     font-weight: bold;
 
@@ -96,27 +95,21 @@ header {
 
 #totalScore {
 
-    background:
-        rgba(255, 255, 255, 0.2);
+    background: white;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.5);
+    color: #f57c00;
 
-    padding:
-        7px 12px;
+    font-weight: bold;
 
-    border-radius:
-        20px;
+    font-size: 15px;
 
-    font-size:
-        15px;
+    padding: 7px 12px;
 
-    font-weight:
-        bold;
+    border-radius: 20px;
 
-    white-space:
-        nowrap;
+    box-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.15);
 
 }
 
@@ -127,90 +120,77 @@ header {
 
 #categoryFilter {
 
-    display:
-        flex;
+    background: white;
 
-    gap:
-        8px;
+    padding: 10px 8px;
 
-    padding:
-        10px;
+    display: flex;
 
-    background:
-        white;
+    gap: 7px;
 
-    overflow-x:
-        auto;
+    overflow-x: auto;
 
-    white-space:
-        nowrap;
+    white-space: nowrap;
 
     box-shadow:
         0 2px 5px
         rgba(0, 0, 0, 0.08);
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        900;
+    z-index: 900;
+
+}
+
+
+#categoryFilter::-webkit-scrollbar {
+
+    height: 0;
 
 }
 
 
 .category-btn {
 
-    border:
-        1px solid #ddd;
+    border: 1px solid #ddd;
 
-    background:
-        #f7f7f7;
+    background: #f5f5f5;
 
-    color:
-        #555;
+    color: #555;
 
-    padding:
-        8px 13px;
+    border-radius: 20px;
 
-    border-radius:
-        20px;
+    padding: 8px 13px;
 
-    font-size:
-        13px;
+    font-size: 13px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    white-space:
-        nowrap;
+    white-space: nowrap;
 
-    transition:
-        0.2s;
+    height: auto;
+
+    width: auto;
 
 }
 
 
 .category-btn:hover {
 
-    background:
-        #eeeeee;
+    opacity: 1;
 
 }
 
 
 .category-btn.active {
 
-    background:
-        #ff8c00;
+    background: #ff9800;
 
-    border-color:
-        #ff8c00;
+    color: white;
 
-    color:
-        white;
+    border-color: #ff9800;
 
-    font-weight:
-        bold;
+    font-weight: bold;
 
 }
 
@@ -221,17 +201,20 @@ header {
 
 #map {
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        55vh;
+    height: 52vh;
 
-    min-height:
-        400px;
+    min-height: 360px;
 
-    border:
-        none;
+    border: none;
+
+}
+
+
+.leaflet-control-zoom {
+
+    margin-top: 10px !important;
 
 }
 
@@ -242,64 +225,51 @@ header {
 
 #locationButton {
 
-    position:
-        fixed;
+    position: absolute;
 
-    right:
-        15px;
+    right: 15px;
 
-    bottom:
-        90px;
+    top: 145px;
 
-    z-index:
-        1000;
+    z-index: 800;
 
-    width:
-        58px;
+    width: auto;
 
-    height:
-        58px;
+    height: auto;
 
-    border:
-        none;
+    border: none;
 
-    border-radius:
-        50%;
+    background: white;
 
-    background:
-        white;
+    color: #333;
 
-    color:
-        #333;
+    padding: 10px 14px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    font-weight: bold;
 
     box-shadow:
-        0 3px 12px
-        rgba(0, 0, 0, 0.3);
+        0 2px 8px
+        rgba(0, 0, 0, 0.25);
 
-    font-size:
-        12px;
-
-    font-weight:
-        bold;
-
-    cursor:
-        pointer;
+    cursor: pointer;
 
 }
 
 
 #locationButton:hover {
 
-    background:
-        #f5f5f5;
+    background: #f5f5f5;
 
 }
 
 
 #locationButton:active {
 
-    transform:
-        scale(0.94);
+    transform: scale(0.95);
 
 }
 
@@ -308,477 +278,100 @@ header {
    現在地アイコン
 ===================================================== */
 
-.user-location-icon {
+.user-location {
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
 
     background:
-        transparent;
+        rgba(33, 150, 243, 0.25);
 
-    border:
-        none;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 2px solid
+        rgba(33, 150, 243, 0.5);
 
 }
 
 
 .user-location-dot {
 
-    width:
-        45px;
+    width: 14px;
 
-    height:
-        45px;
+    height: 14px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
-    background:
-        #3498db;
+    background: #2196f3;
 
-    border:
-        4px solid white;
+    border: 3px solid white;
 
     box-shadow:
-        0 2px 8px
-        rgba(0, 0, 0, 0.4);
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    font-size:
-        22px;
+        0 1px 5px
+        rgba(0, 0, 0, 0.3);
 
 }
 
 
 /* =====================================================
-   マーカー
+   カスタムピン
 ===================================================== */
 
 .custom-marker {
 
-    background:
-        transparent;
+    background: transparent;
 
-    border:
-        none;
+    border: none;
 
 }
 
 
-.marker-pin {
+.marker-body {
 
-    width:
-        46px;
+    width: 46px;
 
-    height:
-        46px;
+    height: 46px;
 
-    border-radius:
-        50% 50% 50% 0;
+    border-radius: 50% 50% 50% 0;
 
     transform:
         rotate(-45deg);
 
-    border:
-        3px solid white;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 3px solid white;
 
     box-shadow:
         0 3px 8px
         rgba(0, 0, 0, 0.35);
 
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
 }
 
 
-.marker-pin span {
+.marker-icon {
 
     transform:
         rotate(45deg);
 
-    font-size:
-        21px;
-
-    color:
-        white;
+    font-size: 22px;
 
 }
 
 
-/* 歴史 */
+.answered-marker {
 
-.marker-pin.history {
-
-    background:
-        #8e44ad;
-
-}
-
-
-/* 自然 */
-
-.marker-pin.nature {
-
-    background:
-        #27ae60;
-
-}
-
-
-/* グルメ */
-
-.marker-pin.food {
-
-    background:
-        #e67e22;
-
-}
-
-
-/* 施設 */
-
-.marker-pin.facility {
-
-    background:
-        #3498db;
-
-}
-
-
-/* 駅 */
-
-.marker-pin.station {
-
-    background:
-        #16a085;
-
-}
-
-
-/* 激レア */
-
-.marker-pin.rare {
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffd700,
-            #f39c12
-        );
-
-}
-
-
-/* 回答済み */
-
-.marker-pin.answered {
-
-    background:
-        #7f8c8d;
-
-}
-
-
-/* =====================================================
-   現在地・到達結果
-===================================================== */
-
-#result {
-
-    margin:
-        10px;
-
-    padding:
-        12px;
-
-    min-height:
-        45px;
-
-    background:
-        white;
-
-    border-radius:
-        10px;
-
-    text-align:
-        center;
-
-    box-shadow:
-        0 2px 6px
-        rgba(0, 0, 0, 0.08);
-
-    font-size:
-        15px;
-
-}
-
-
-.arrival-box {
-
-    color:
-        #e67e22;
-
-}
-
-
-.arrival-box strong {
-
-    display:
-        block;
-
-    margin-bottom:
-        8px;
-
-    font-size:
-        17px;
-
-}
-
-
-.arrival-button {
-
-    display:
-        inline-block;
-
-    text-decoration:
-        none;
-
-    background:
-        #ff8c00;
-
-    color:
-        white;
-
-    padding:
-        9px 18px;
-
-    border-radius:
-        20px;
-
-    font-weight:
-        bold;
-
-}
-
-
-.rare-arrival {
-
-    color:
-        #d39e00;
-
-}
-
-
-/* =====================================================
-   近くのスポット
-===================================================== */
-
-#nearbySection {
-
-    background:
-        white;
-
-    margin-top:
-        10px;
-
-    padding:
-        18px 12px;
-
-}
-
-
-#nearbySection h2 {
-
-    font-size:
-        19px;
-
-    margin-bottom:
-        12px;
-
-    text-align:
-        left;
-
-}
-
-
-#nearbyList {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        8px;
-
-}
-
-
-.nearby-item {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-    background:
-        #f8f9fa;
-
-    border:
-        1px solid #e5e5e5;
-
-    border-radius:
-        10px;
-
-    padding:
-        10px;
-
-    cursor:
-        pointer;
-
-    transition:
-        0.2s;
-
-}
-
-
-.nearby-item:hover {
-
-    background:
-        #f0f0f0;
-
-}
-
-
-.nearby-item.completed {
-
-    opacity:
-        0.65;
-
-}
-
-
-.nearby-icon {
-
-    width:
-        42px;
-
-    height:
-        42px;
-
-    min-width:
-        42px;
-
-    border-radius:
-        50%;
-
-    background:
-        #eeeeee;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    font-size:
-        21px;
-
-}
-
-
-.nearby-info {
-
-    flex:
-        1;
-
-    text-align:
-        left;
-
-    min-width:
-        0;
-
-}
-
-
-.nearby-info strong {
-
-    display:
-        block;
-
-    font-size:
-        15px;
-
-    white-space:
-        nowrap;
-
-    overflow:
-        hidden;
-
-    text-overflow:
-        ellipsis;
-
-}
-
-
-.nearby-info small {
-
-    display:
-        block;
-
-    color:
-        #888;
-
-    margin-top:
-        3px;
-
-    font-size:
-        12px;
-
-}
-
-
-.nearby-distance {
-
-    font-weight:
-        bold;
-
-    color:
-        #555;
-
-    font-size:
-        13px;
-
-}
-
-
-.loading {
-
-    color:
-        #888;
-
-    font-size:
-        14px;
+    opacity: 0.65;
 
 }
 
@@ -789,231 +382,608 @@ header {
 
 .leaflet-popup-content {
 
-    margin:
-        12px;
+    margin: 10px !important;
 
 }
 
 
 .popup-card {
 
-    width:
-        240px;
+    width: 250px;
 
-    text-align:
-        center;
-
-}
-
-
-.popup-title {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        6px;
-
-    margin-bottom:
-        8px;
-
-}
-
-
-.popup-title h3 {
-
-    font-size:
-        17px;
-
-}
-
-
-.popup-icon {
-
-    font-size:
-        21px;
+    text-align: center;
 
 }
 
 
 .popup-image {
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        135px;
+    height: 130px;
 
-    object-fit:
-        cover;
+    object-fit: cover;
 
-    border-radius:
-        8px;
+    border-radius: 10px;
 
-    margin-bottom:
-        8px;
+    margin-bottom: 8px;
+
+}
+
+
+.popup-card h3 {
+
+    font-size: 20px;
+
+    margin: 6px 0;
 
 }
 
 
 .popup-category {
 
-    display:
-        inline-block;
+    display: inline-block;
 
-    color:
-        white;
+    background: #f1f1f1;
 
-    padding:
-        4px 9px;
+    border-radius: 15px;
 
-    border-radius:
-        12px;
+    padding: 4px 9px;
 
-    font-size:
-        11px;
+    font-size: 12px;
 
-    margin-bottom:
-        7px;
+    color: #555;
 
 }
 
 
-.popup-category.history {
+.popup-status {
+
+    margin: 8px 0;
+
+    padding: 7px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+}
+
+
+.popup-status.answered {
+
+    background: #e8f5e9;
+
+    color: #2e7d32;
+
+}
+
+
+.popup-status.waiting {
+
+    background: #fff3e0;
+
+    color: #ef6c00;
+
+}
+
+
+.rare-label {
+
+    background: #fff8e1;
+
+    color: #f57f17;
+
+    font-weight: bold;
+
+    padding: 6px;
+
+    border-radius: 7px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.popup-buttons {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 10px;
+
+}
+
+
+.popup-buttons button {
+
+    flex: 1;
+
+    width: auto;
+
+    height: auto;
+
+    padding: 10px 5px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    color: white;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+}
+
+
+.popup-quiz-button {
+
+    background: #7e57c2;
+
+}
+
+
+.popup-route-button {
+
+    background: #1976d2;
+
+}
+
+
+/* =====================================================
+   近くのスポット
+===================================================== */
+
+#nearbySection {
+
+    background: white;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 18px;
+
+}
+
+
+#nearbyList {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.nearby-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background: #f8f9fa;
+
+    border: 1px solid #eee;
+
+    cursor: pointer;
+
+}
+
+
+.nearby-item:active {
+
+    background: #eeeeee;
+
+}
+
+
+.nearby-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 19px;
+
+}
+
+
+.nearby-info {
+
+    flex: 1;
+
+    text-align: left;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.nearby-info strong {
+
+    font-size: 14px;
+
+}
+
+
+.nearby-info span {
+
+    font-size: 11px;
+
+    color: #888;
+
+}
+
+
+.nearby-distance {
+
+    font-size: 13px;
+
+    color: #555;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   到達メッセージ
+===================================================== */
+
+#result {
+
+    margin: 10px;
+
+    text-align: center;
+
+}
+
+
+.arrival-message {
 
     background:
-        #8e44ad;
-
-}
-
-
-.popup-category.nature {
-
-    background:
-        #27ae60;
-
-}
-
-
-.popup-category.food {
-
-    background:
-        #e67e22;
-
-}
-
-
-.popup-category.facility {
-
-    background:
-        #3498db;
-
-}
-
-
-.popup-category.station {
-
-    background:
-        #16a085;
-
-}
-
-
-.rare-category {
-
-    background:
-        #f1c40f;
-
-    color:
-        #6b4f00;
-
-}
-
-
-.popup-distance {
-
-    color:
-        #666;
-
-    font-size:
-        12px;
-
-    margin:
-        5px 0 8px;
-
-}
-
-
-.popup-button {
-
-    display:
-        block;
-
-    width:
-        100%;
+        linear-gradient(
+            135deg,
+            #fff8e1,
+            #fff3cd
+        );
 
     border:
-        none;
+        2px solid #ffc107;
 
-    border-radius:
-        8px;
+    border-radius: 12px;
 
-    padding:
-        9px;
+    padding: 12px;
 
-    margin-top:
-        7px;
+    display: flex;
 
-    font-size:
-        13px;
+    flex-direction: column;
 
-    font-weight:
-        bold;
-
-    cursor:
-        pointer;
-
-    text-decoration:
-        none;
-
-    color:
-        white;
+    gap: 8px;
 
 }
 
 
-.quiz-button {
+.arrival-message strong {
 
-    background:
-        #3498db;
-
-}
-
-
-.route-button {
-
-    background:
-        #ff8c00;
+    font-size: 17px;
 
 }
 
 
-.answered-label {
+.arrival-message a {
 
-    background:
-        #ecf0f1;
+    display: block;
 
-    color:
-        #555;
+    background: #ff9800;
 
-    padding:
-        8px;
+    color: white;
 
-    border-radius:
-        8px;
+    text-decoration: none;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   ルート案内
+===================================================== */
+
+.route-message {
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.route-message strong {
+
+    color: #1976d2;
+
+    font-size: 17px;
+
+}
+
+
+.route-message span {
+
+    font-size: 14px;
+
+}
+
+
+.route-message button {
+
+    width: auto;
+
+    height: auto;
+
+    border: none;
+
+    background: #555;
+
+    color: white;
+
+    padding: 8px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   リセット
+===================================================== */
+
+#resetButton {
+
+    display: block;
+
+    margin: 20px auto;
+
+    width: auto;
+
+    height: auto;
+
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #777;
+
+    color: white;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+}
+
+
+#resetButton:hover {
+
+    background: #555;
+
+}
+
+
+/* =====================================================
+   下部ナビ
+===================================================== */
+
+#bottomNav {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 64px;
+
+    background: white;
+
+    border-top: 1px solid #ddd;
+
+    display: flex;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 -2px 8px
+        rgba(0, 0, 0, 0.1);
+
+}
+
+
+.nav-item {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+}
+
+
+.nav-item small {
+
+    font-size: 11px;
+
+}
+
+
+.nav-item.active {
+
+    color: #ff9800;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   スマホ
+===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    header {
+
+        height: 60px;
+
+    }
+
+
+    header h1 {
+
+        font-size: 18px;
+
+    }
+
+
+    .header-title span {
+
+        font-size: 22px;
+
+    }
+
+
+    #totalScore {
+
+        font-size: 13px;
+
+        padding: 6px 10px;
+
+    }
+
+
+    #map {
+
+        height: 52vh;
+
+        min-height: 330px;
+
+    }
+
+
+    #locationButton {
+
+        top: 137px;
+
+        right: 12px;
+
+        font-size: 13px;
+
+        padding: 9px 12px;
+
+    }
+
+
+    .popup-card {
+
+        width: 230px;
+
+    }
+
+
+    .popup-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .popup-buttons button {
+
+        width: 100%;
+
+    }
+
+}

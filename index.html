@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>新発田観光マップ</title>
+
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-title">
+        <span>🗺️</span>
+        <h1>新発田観光マップ</h1>
+    </div>
+
+    <div id="totalScore">
+        🏆 0 pt
+    </div>
+
+</header>
+
+
+<!-- ジャンルフィルター -->
+
+<div id="categoryFilter">
+
+    <button
+        class="category-btn active"
+        data-category="all"
+        onclick="filterCategory('all')"
+    >
+        🌏 すべて
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="history"
+        onclick="filterCategory('history')"
+    >
+        🏯 歴史・文化
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="nature"
+        onclick="filterCategory('nature')"
+    >
+        🌳 自然
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="food"
+        onclick="filterCategory('food')"
+    >
+        🍴 グルメ
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="facility"
+        onclick="filterCategory('facility')"
+    >
+        🏢 施設
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="station"
+        onclick="filterCategory('station')"
+    >
+        🚉 交通
+    </button>
+
+    <button
+        class="category-btn"
+        data-category="rare"
+        onclick="filterCategory('rare')"
+    >
+        ⭐ 激レア
+    </button>
+
+</div>
+
+
+<!-- 地図 -->
+
+<div id="map"></div>
+
+
+<!-- 現在地ボタン -->
+
+<button
+    id="locationButton"
+    onclick="moveToCurrentLocation()"
+>
+    📍 現在地
+</button>
+
+
+<!-- 現在地・スポット情報 -->
+
+<div id="result">
+    現在地を取得しています...
+</div>
+
+
+<!-- 近くのスポット -->
+
+<section id="nearbySection">
+
+    <h2>📍 近くのスポット</h2>
+
+    <div id="nearbyList">
+
+        <p class="loading">
+            現在地を取得すると表示されます
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- 開発用情報 -->
+
+<div id="coords" class="developer-info"></div>
+
+
+<!-- 開発用リセット -->
+
+<button
+    id="resetButton"
+    onclick="resetGame()"
+>
+    開発用：得点・回答履歴をリセット
+</button>
+
+
+<!-- 下部メニュー -->
+
+<nav id="bottomNav">
+
+    <a
+        href="index.html"
+        class="nav-item active"
+    >
+        <span>🗺️</span>
+        <small>マップ</small>
+    </a>
+
+    <a
+        href="#nearbySection"
+        class="nav-item"
+    >
+        <span>📍</span>
+        <small>スポット</small>
+    </a>
+
+    <a
+        href="quiz.html"
+        class="nav-item"
+    >
+        <span>🧠</span>
+        <small>クイズ</small>
+    </a>
+
+</nav>
+
+
+<!-- Leaflet -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
